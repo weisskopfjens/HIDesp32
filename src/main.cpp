@@ -6,9 +6,12 @@
 #include <WiFiServer.h>
 
 //#define DEBUG
+
+// tcp settings
 #define TCP
 #define TCPPORT 8088
 
+// udp settings
 #define UDP
 #define UDPPORT 8888
 
@@ -23,6 +26,7 @@ WiFiClient client;
 
 char packetBuffer[255];
 
+// wlan settings
 const char* ssid = "key";
 const char* pass = "virtualkey";
 
@@ -145,6 +149,10 @@ bool ParseCommand(String cmd) {
   }
   return false;
 }
+
+//
+// setup
+//
 
 void setup() {
   WiFi.softAP(ssid, pass);
